@@ -118,7 +118,9 @@ void MainWindow::actions()
 {
     QPushButton *button = (QPushButton *)sender();
     if (!(str.isEmpty())){
-        if (str[str.size()-1].isDigit()||QString(str[str.size()-1])=="%"){
+        if (str[str.size()-1].isDigit()){
+            str += button->text();
+        }else if(QString(str[str.size()-1])=="%" && button->text()!="."){
             str += button->text();
         }else if (str.last(1)=="+"||str.last(1)=="-"||str.last(1)=="/"||str.last(1)=="*"||str.last(1)=="."){
             str.remove(-1,1);
