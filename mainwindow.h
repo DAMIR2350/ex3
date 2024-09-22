@@ -35,9 +35,6 @@ public:
 
 
 
-private slots:
-    void calculate();
-
 private:
     Ui::MainWindow *ui;
     double eval(const QString &expr);
